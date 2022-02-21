@@ -23,7 +23,7 @@ app.get('/', (req, res) => {
 
 app.post('/validate', (req, res) => {
     var ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress 
-    console.log(`POST request from ${ip} with data: ${req.body}`)
+    console.log(`POST request from ${ip} with data: ${JSON.stringify(req.body)}`)
     res.send('POST request sent successfully')
 })
 
