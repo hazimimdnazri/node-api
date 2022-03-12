@@ -11,6 +11,11 @@ app.get('/', (req, res) => {
 
 app.post('/register', userController.create)
 
+app.post('/testapi', (req, res) => {
+    console.log(req.body)
+    res.status(200).json({status : 'success', message : 'API reachable'})
+})
+
 app.post('/login', userController.login)
 
 app.post('/validate', (req, res) => {
